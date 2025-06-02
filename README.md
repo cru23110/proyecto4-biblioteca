@@ -1,18 +1,13 @@
 # Proyecto Final - Biblioteca
 
-Este proyecto fue desarrollado para el curso de Bases de Datos 1. Consiste en un sistema CRUD completo para la gestión de una biblioteca utilizando SQLite y SQLAlchemy como ORM. El proyecto cumple con todos los requisitos establecidos en las instrucciones, incluyendo la creación de vistas, validaciones, restricciones, triggers y funciones.
+Este proyecto fue desarrollado para el curso de Bases de Datos 1. Es un sistema CRUD completo que gestiona una biblioteca utilizando SQLite y SQLAlchemy como ORM. Cumple con todos los requisitos solicitados en el laboratorio, incluyendo relaciones, validaciones, restricciones, triggers, vistas y tipos personalizados.
 
-## Estructura del Proyecto
+## Archivos del repositorio
 
-- `main.py`: Archivo principal para ejecutar la aplicación.
-- `models.py`: Definición de los modelos ORM con relaciones.
-- `functions.py`: Contiene funciones auxiliares y de negocio.
-- `schema.sql`: Script para crear toda la base de datos con tablas, vistas, triggers y funciones.
-- `data.sql`: Script para poblar la base de datos con más de 1000 datos simulados.
-- `diagrama.png`: Diagrama E-R de la base de datos.
-- `capturas/`: Carpeta con evidencias del funcionamiento del sistema.
-- `informe.pdf`: Documento con introducción, diagrama, capturas y reflexión.
-- `README.md`: Este archivo.
+- `app/main.py`: Archivo principal para ejecutar la aplicación.
+- `app/models.py`: Definición de los modelos ORM con relaciones.
+- `schema.sql`: Script para crear toda la base de datos.
+- `data.sql`: Script que inserta más de 1000 datos simulados.
 
 ## Requisitos
 
@@ -20,23 +15,26 @@ Este proyecto fue desarrollado para el curso de Bases de Datos 1. Consiste en un
 - SQLite
 - SQLAlchemy
 
-## Instrucciones de ejecución
+## Instrucciones para correr el sistema
 
-1. Crear la base de datos con el esquema:
-
+1. Crear la base de datos vacía:
    ```bash
-   sqlite3 biblioteca.db < schema.sql
+   sqlite3 biblioteca.db
    ```
 
-2. Insertar los datos:
-
+2. Ejecutar el esquema:
    ```bash
-   sqlite3 biblioteca.db < data.sql
+   .read schema.sql
    ```
 
-3. Ejecutar el sistema:
+3. Cargar los datos:
    ```bash
-   python main.py
+   .read data.sql
+   ```
+
+4. Ejecutar el sistema:
+   ```bash
+   python app/main.py
    ```
 
 ## Créditos
